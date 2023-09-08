@@ -13,12 +13,12 @@ app.use(cors());
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "Your Email", // Access the environment variable
+    user: "Your Email",
     pass: "Your Password",
   },
 });
 
-app.post("/contact-form", async (req, res) => {
+app.post("/send-email", async (req, res) => {
   try {
     const { email, name, message } =
       req.body;
